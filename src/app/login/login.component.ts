@@ -10,6 +10,8 @@ export class LoginComponent implements OnInit {
   username = 'ajay';
   password = 'password';
   invalidLogin = false;
+  errorMessage = 'Invalid Credentials';
+  
   constructor() { }
 
   ngOnInit() {
