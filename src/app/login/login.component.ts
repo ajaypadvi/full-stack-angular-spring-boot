@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     // console.log("username >> " + this.username + " , password >> " + this.password);
     if (this.username === 'ajay' && this.password === 'password') {
       //Redirect to Welcome page on successful authentication of user
-      this.router.navigate(['welcome']);
+      this.router.navigate(['welcome', this.username]);
       this.invalidLogin = false;
     } else {
       this.invalidLogin = true;
