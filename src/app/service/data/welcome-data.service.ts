@@ -16,4 +16,12 @@ export class WelcomeDataService {
     console.log("Executing hello world bean service");
     return this.client.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
   }
+
+  //http://localhost:8080/hello-world-bean/path-variable/ajay
+
+
+  executeHelloWorldBeanServiceWithPathParameter(name) {
+    console.log("Executing hello world bean service with path parameter ={ username :" + name + "}");
+    return this.client.get<HelloWorldBean>(`http://localhost:8080/hello-world-bean/path-variable/${name}`);
+  }
 }
