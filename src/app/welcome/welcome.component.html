@@ -3,3 +3,18 @@
     Welcome {{name}}, Good to see to you back!!
     <span>You can manage your todos <a routerLink="/todos">here</a></span>
 </div>
+
+<div class="container">
+    Click here to get the customised welcome message <button class="btn btn-success" (click)="getWelcomeMessage()"> Get
+        Welcome Message</button>
+</div>
+
+<div *ngIf="welcomeMessageFromServer" class="container">
+    <h1>Your custome message is below</h1>
+    {{welcomeMessageFromServer}}
+</div>
+
+<div *ngIf="errorResponseFromServer" class="container">
+    <h1>Your custome message is below</h1>
+    {{errorResponseFromServer}}
+</div>
