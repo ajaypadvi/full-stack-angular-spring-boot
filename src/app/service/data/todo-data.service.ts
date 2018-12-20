@@ -16,7 +16,12 @@ export class TodoDataService {
 
 
   deleteTodo(username, id) {
-    console.log("Deleteting todo item requested from todo list on user interface {username=" + username + ",id=" + id + "}");
+    console.log("Deleting todo item requested from todo list on user interface {username=" + username + ",id=" + id + "}");
     return this.client.delete<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
+  }
+
+  retrieveTodo(username, id) {
+    console.log("Retrieving specific todo item requested from todo component {username=" + username + ",id=" + id + "}");
+    return this.client.get<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
   }
 }
